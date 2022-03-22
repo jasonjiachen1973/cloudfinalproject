@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Basics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="app.css">
+
+    <title>动态显示时间</title>
+        
+        <style type="text/css">
+            #times{
+                width: 200px;
+                height: 100px;
+                border: 2px  gray;  /*如果不加实线无法显示边框*/
+            }
+        </style>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <a class="navbar-brand" href="index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://jasonchenjia.com/">Logout <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=categories%23compute&trk=a64ebc8a-7f91-4392-b461-39fe285d2aa4&sc_channel=acquisition&sc_medium=ACQ-P|PS-GO|Brand|Desktop|SU|Compute|Solution|CA|EN|Text&s_kwcid=AL!4422!3!472464398567!b!!g!!%2Bamazon%20%2Bweb%20%2Bservices%20%2Bserver&ef_id=CjwKCAiAvaGRBhBlEiwAiY-yMHPOkP1slguwox-1cmfwznMapbDtUVh9pRyuT53R_odK3Yb_-xMyUxoCMeAQAvD_BwE:G:s&s_kwcid=AL!4422!3!472464398567!b!!g!!%2Bamazon%20%2Bweb%20%2Bservices%20%2Bserver">AWS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://azure.microsoft.com/en-ca/features/azure-portal/">Azure</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://cloud.google.com/gcp?utm_source=google&utm_medium=cpc&utm_campaign=na-CA-all-en-dr-bkws-all-all-trial-e-dr-1011347&utm_content=text-ad-none-any-DEV_c-CRE_491349600637-ADGP_Desk%20%7C%20BKWS%20-%20EXA%20%7C%20Txt%20~%20Google%20Cloud%20Platform%20Core-KWID_43700068256543263-aud-388092988201%3Akwd-87853815&utm_term=KW_gcp-ST_gcp&gclid=CjwKCAiAvaGRBhBlEiwAiY-yMCtS-dU9BVi9ukltpyWpDB_fhsLJuMyudyWor-DwGYaXVNjX8nMKGxoCbgIQAvD_BwE&gclsrc=aw.ds">GCP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        <div class="container-fluid hero d-flex align-items-center justify-content-center">
+            <div class="text-center">
+                <h1 class="display-3 mb-0">Welcom  </h1>
+                <h2 class="display-5 mt-0">to Chen' Cloud</h2>
+                
+                <div id="times">
+            
+                </div>
+                
+                <script type="text/javascript">
+                    //得到时间并写入div
+                    function getDate(){
+                        //获取当前时间
+                        var date = new Date();
+                        //格式化为本地时间格式
+                        var date1 = date.toLocaleString();
+                        //获取div
+                        var div1 = document.getElementById("times");
+                        //将时间写入div
+                        div1.innerHTML = date1;
+                    }
+                    //使用定时器每秒向div写入当前时间
+                    setInterval("getDate()",1000);
+                </script>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-15">
+                    <h1>IaaS Architecture overview</h1>
+                    <p class="lead">
+                        with IaaS Amazon, you have the ability to use the software, operating systems, databases and apps that you are already most comfortable with. Being able to put these things into a single infrastructure helps you create a central hub that is easily accessible, fully remote, and allows you to create templates for future businesses.
+                    </p>
+                   
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+            <img src="Iaas.drawio.png" alt="The architecture diagram"/>
+            <div class="row">
+                <div class="col-sm-6 my-4">
+                    
+                        <p><a class="btn btn-secondary" href="http://MyWordpressALB-chen-2-163408935.us-west-1.elb.amazonaws.com" role="button">Enter Demo  &raquo;</a></p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="container marketing">
+
+
+
+
+    </main>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
