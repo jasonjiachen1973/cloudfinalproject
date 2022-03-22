@@ -1,0 +1,6 @@
+customhost = "chenmysql.cozwumbmmghr.us-east-1.rds.amazonaws.com"
+customuser = "admin"
+custompass = "admin123456"
+customdb = "employee"
+custombucket = "addemployeechen"
+customregion = "us-east-1"
